@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import s from './Header.styles';
 
 export default function Header() {
   return (
-    <s.HeaderWrapper>
-      <div>@ GoWebEZ</div>
-      <s.Navigation>
-        <Link to="/">Home</Link>
-        <Link to="/member">Member</Link>
-        <Link to="/guest-book">Guest Book</Link>
-      </s.Navigation>
-    </s.HeaderWrapper>
+    <s.Root>
+      <s.Logo>@ GoWebEZ</s.Logo>
+      <s.NavList>
+        <s.Nav to="/">Home</s.Nav>
+        <s.Nav to="/member">Member</s.Nav>
+        <s.Nav to="/guest-book">Guest Book</s.Nav>
+      </s.NavList>
+    </s.Root>
   );
 }

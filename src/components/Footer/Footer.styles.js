@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const FooterWrapper = styled.footer`
+const Root = styled.footer`
   width: calc(100vw);
-  padding: 1rem;
+  padding: 36px 0;
 
   display: flex;
   flex-direction: column;
@@ -10,11 +10,12 @@ const FooterWrapper = styled.footer`
   align-items: center;
 
   background: #efefef;
+  line-height: 1.5;
 
   font-size: 14px;
-  color: gray;
+  color: #a5a5a5;
 `;
 
 export default {
-  FooterWrapper,
+  Root,
 };

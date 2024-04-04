@@ -1,10 +1,13 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import Layout from './components/Layout/Layout';
+import { RouteSwitch } from './components/RouteSwitch';
+import { Layout } from './components/Layout/Layout';
 
 function App() {
   return (
     <Router>
-      <Layout />
+      <Layout>
+        <RouteSwitch />
+      </Layout>
     </Router>
   );
 }

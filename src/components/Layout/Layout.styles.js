@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
-const RoutesWrapper = styled.section`
-  width: calc(100vw - 4rem);
-  min-height: 600px;
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+export const Body = styled.div`
+  padding-top: 80px;
+  flex: 1;
 `;
 
 export default {
-  RoutesWrapper,
+  Root,
+  Body,
 };
