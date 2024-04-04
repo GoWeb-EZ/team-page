@@ -23,6 +23,7 @@ const Body = styled.div`
   background-color: transparent;
   border-radius: 16px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   text-align: center;
 `;
