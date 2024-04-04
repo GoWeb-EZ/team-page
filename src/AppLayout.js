@@ -6,32 +6,34 @@ import About from "./About";
 import Posts from "./Posts";
 import PostLists from "./PostLists";
 import Post from "./Post";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import styled from "styled-components";
 
 export default function AppLayout() {
     return (
         <>
-            <nav style={{ margin: 10 }}>
-                <Link to="/" style={{ padding: 5 }}>
-                    Home
-                </Link>
-                <Link to="/posts" style={{ padding: 5 }}>
-                    Posts
-                </Link>
-                <Link to="/about" style={{ padding: 5 }}>
-                    About
-                </Link>
-            </nav>
-            <Routes>
-                <Route path="/" element={<Home />} />
+            <Header />
+            <RoutesWrapper>
+                <Routes>
+                    <Route path="/" element={<Home />} />
 
-                <Route path="/posts" element={<Posts />}>
-                    <Route index element={<PostLists />} />
-                    <Route path=":slug" element={<Post />} />
-                </Route>
+                    <Route path="/posts" element={<Posts />}>
+                        <Route index element={<PostLists />} />
+                        <Route path=":slug" element={<Post />} />
+                    </Route>
 
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<NoMatch />} />
-            </Routes>
+                    <Route path="/about" element={<About />} />
+                    <Route path="*" element={<NoMatch />} />
+                </Routes>
+            </RoutesWrapper>
+
+            <Footer />
         </>
     );
 }
+
+const RoutesWrapper = styled.section`
+    width: calc(100vw - 4rem);
+    min-height: 600px;
+`;
