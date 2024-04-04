@@ -8,13 +8,13 @@ import MemberList from '../Member/List/MemberList';
 import Quiz from '../Quiz/Quiz';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import styled from 'styled-components';
+import s from './Layout.styles';
 
 export default function Layout() {
   return (
     <>
       <Header />
-      <RoutesWrapper>
+      <s.RoutesWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
 
@@ -26,14 +26,9 @@ export default function Layout() {
           <Route path="/guest-book" element={<Guestbook />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
-      </RoutesWrapper>
+      </s.RoutesWrapper>
 
       <Footer />
     </>
   );
 }
-
-const RoutesWrapper = styled.section`
-  width: calc(100vw - 4rem);
-  min-height: 600px;
-`;

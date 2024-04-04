@@ -1,29 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import s from './Header.styles';
 
 export default function Header() {
   return (
-    <HeaderWrapper>
+    <s.HeaderWrapper>
       <div>@ GoWebEZ</div>
-      <Navigation>
+      <s.Navigation>
         <Link to="/">Home</Link>
         <Link to="/member">Member</Link>
         <Link to="/guest-book">Guest Book</Link>
-      </Navigation>
-    </HeaderWrapper>
+      </s.Navigation>
+    </s.HeaderWrapper>
   );
 }
-
-const HeaderWrapper = styled.header`
-  width: calc(100vw - 4rem);
-  padding: 1rem 2rem;
-
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Navigation = styled.nav`
-  display: flex;
-  gap: 2rem;
-`;

@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import s from './Home.styles';
 
 export default function Home() {
   return (
-    <HomeWrapper>
+    <s.Root>
       <h2>GoWebEZ is Crazy Bastart Team</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu
@@ -14,14 +13,6 @@ export default function Home() {
       <button type="button" className="btn btn-outline-dark">
         Learn more team
       </button>
-    </HomeWrapper>
+    </s.Root>
   );
 }
-
-const HomeWrapper = styled.div`
-  padding: 4rem 2rem;
-
-  > p {
-    margin: 2rem 0;
-  }
-`;

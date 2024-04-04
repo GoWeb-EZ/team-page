@@ -6,7 +6,7 @@ export default function Quiz() {
   const { slug } = useParams();
   const post = blogPostList[slug];
   if (!post) {
-    return <span> The blog post you've reqeustsed doesn't exist.</span>;
+    return <span> The blog post you ve reqeustsed doesn t exist.</span>;
   }
 
   const { title, description } = post;

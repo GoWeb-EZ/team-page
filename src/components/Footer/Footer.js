@@ -1,26 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import s from './Footer.styles';
 
 export default function Footer() {
   return (
-    <FooterWrapper>
+    <s.FooterWrapper>
       <div>1342, Seongnam-daero, Sujeong-gu, Seongnam-si,</div>
       <div>Gyeonggi-do, Republic of Korea</div>
-    </FooterWrapper>
+    </s.FooterWrapper>
   );
 }
-
-const FooterWrapper = styled.footer`
-  width: calc(100vw);
-  padding: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: #efefef;
-
-  font-size: 14px;
-  color: gray;
-`;
