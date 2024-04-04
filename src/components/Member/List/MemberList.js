@@ -1,11 +1,11 @@
 import React from 'react';
-import BlogPosts from '../../BlogPosts';
 import { Link } from 'react-router-dom';
+import { blogPostList } from '../../Blog/Post/blogPost.mock';
 
 export default function PostLists() {
   return (
     <ul>
-      {Object.entries(BlogPosts).map(([slug, { title }]) => (
+      {Object.entries(blogPostList).map(([slug, { title }]) => (
         <li key={slug}>
           <Link to={`/posts/${slug}`}>
             <h3>{title}</h3>

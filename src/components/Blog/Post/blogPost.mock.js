@@ -1,4 +1,4 @@
-const BlogPosts = {
+export const blogPostList = {
   'first-blog-post': {
     title: 'First Blog Post',
     description: 'Lorem ipsum dolor sit amet, consectetur adip.',
@@ -8,5 +8,3 @@ const BlogPosts = {
     description: 'Hello React Router v6',
   },
 };
-
-export default BlogPosts;

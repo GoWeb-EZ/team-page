@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home';
-import NoMatch from './pages/NoMatch';
-import Guestbook from './pages/guestbook/Guestbook';
-import Members from './pages/member/Members';
-import MemberList from './pages/member/MemberList';
-import Quiz from './pages/member/Quiz';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from '../../pages/home/Home';
+import NoMatch from '../../pages/NoMatch';
+import Guestbook from '../../pages/guestbook/Guestbook';
+import Members from '../../pages/member/Members';
+import MemberList from '../Member/List/MemberList';
+import Quiz from '../Quiz/Quiz';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import styled from 'styled-components';
 
-export default function AppLayout() {
+export default function Layout() {
   return (
     <>
       <Header />

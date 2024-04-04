@@ -1,10 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import BlogPosts from '../../BlogPosts';
+import { blogPostList } from '../Blog/Post/blogPost.mock';
 
 export default function Quiz() {
   const { slug } = useParams();
-  const post = BlogPosts[slug];
+  const post = blogPostList[slug];
   if (!post) {
     return <span> The blog post you've reqeustsed doesn't exist.</span>;
   }
