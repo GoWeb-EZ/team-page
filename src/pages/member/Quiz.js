@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import BlogPosts from "./BlogPosts";
+import BlogPosts from "../../BlogPosts";
 
-export default function Post() {
+export default function Quiz() {
     const { slug } = useParams();
     const post = BlogPosts[slug];
     if (!post) {
