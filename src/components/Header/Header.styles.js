@@ -14,11 +14,14 @@ const Root = styled.header`
 
   background-color: transparent;
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  z-index: 100;
 `;
 
 const Logo = styled.h1`
   font-size: 28px;
+  color: #e0e0e0;
 `;
 
 const NavList = styled.ul`
@@ -33,6 +36,8 @@ const Nav = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #e0e0e0;
+  font-weight: 500;
 
   &.active {
     font-weight: 700;

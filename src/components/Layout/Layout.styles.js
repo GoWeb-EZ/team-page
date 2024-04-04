@@ -7,7 +7,6 @@ const Root = styled.div`
 `;
 
 export const Body = styled.div`
-  padding-top: 80px;
   flex: 1;
 `;
 
