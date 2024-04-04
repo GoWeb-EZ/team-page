@@ -8,8 +8,8 @@ export default function Header() {
             <div>@ GoWebEZ</div>
             <Navigation>
                 <Link to="/">Home</Link>
-                <Link to="/posts">Team members (Quiz)</Link>
-                <Link to="/about">Guest Book</Link>
+                <Link to="/member">Member</Link>
+                <Link to="/guest-book">Guest Book</Link>
             </Navigation>
         </HeaderWrapper>
     );
