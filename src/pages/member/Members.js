@@ -1,11 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledMembers = styled.div`
+  margin-top: 10%;
+`
 
 export default function Members() {
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Members</h2>
-      <Outlet />
-    </div>
+    <StyledMembers>
+      <Outlet/>
+    </StyledMembers>
   );
 }

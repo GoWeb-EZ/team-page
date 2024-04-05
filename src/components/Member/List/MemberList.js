@@ -1,17 +1,25 @@
-import React from 'react';
+import MemberListData from "./MemberListData";
+import CardView from "../CardView";
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { blogPostList } from '../../Blog/Post/blogPost.mock';
 
-export default function PostLists() {
+
+const MemberListContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`
+
+export default function MemberList () {
   return (
-    <ul>
-      {Object.entries(blogPostList).map(([slug, { title }]) => (
-        <li key={slug}>
-          <Link to={`/posts/${slug}`}>
-            <h3>{title}</h3>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <MemberListContainer>
+      {
+        Object.entries(MemberListData).map(([key, memberData]) =>
+            <Link to={memberData.name} key = {key}>
+              <CardView memberData={memberData} />
+            </Link>
+            )
+      }
+    </MemberListContainer>
   );
 }
