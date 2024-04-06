@@ -4,12 +4,12 @@ import styled from 'styled-components';
 
 const StyledMembers = styled.div`
   margin-top: 10%;
-`
+`;
 
 export default function Members() {
   return (
     <StyledMembers>
-      <Outlet/>
+      <Outlet />
     </StyledMembers>
   );
 }
