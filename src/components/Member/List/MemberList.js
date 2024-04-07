@@ -10,12 +10,17 @@ const MemberListContainer = styled.div`
   justify-content: space-around;
 `
 
+const NoDecoFontStyle = {
+  color: "#000",
+  textDecoration: "none"
+}
+
 export default function MemberList () {
   return (
     <MemberListContainer>
       {
         Object.entries(MemberListData).map(([key, memberData]) =>
-            <Link to={memberData.name} key = {key}>
+            <Link to={memberData.name} key = {key} style={NoDecoFontStyle}>
               <CardView memberData={memberData} />
             </Link>
             )
