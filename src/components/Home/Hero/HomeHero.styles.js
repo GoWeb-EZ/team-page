@@ -10,88 +10,125 @@ const Root = styled.div`
 
 const Background = styled.img`
   position: absolute;
-  inset: 0;
-  height: 100%;
   overflow: hidden;
-  object-fit: cover;
+
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
 `;
 
-const Body = styled.div`
-  z-index: 2;
-  padding: 80px 50px;
-  backdrop-filter: blur(20px);
-  background-color: transparent;
-  border-radius: 16px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+const BackgroundBlur = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h3`
-  color: #e0e0e0;
+  color: var(--Primary, #252543);
+  text-align: center;
+  font-family: Ghanachocolate;
   font-size: 50px;
-  line-height: 1.2;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
   margin-bottom: 50px;
 `;
 
 const Cta = styled.button`
-  color: #fff;
-  background-color: transparent;
-  padding: 15px 20px;
-  font-size: 26px;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 3.125rem;
+  border: 2px solid #252543;
+  padding: 0.5rem 1rem;
+
+  color: #252543;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  background: transparent;
+  font-weight: 300;
+
   transform: none;
   transition: all 0.3s ease-in-out;
-  font-weight: 500;
 
   &:hover {
     transform: translateY(-3px);
+    background: #252543;
+    color: #fff;
   }
+`;
 
-  &:focus {
-    outline: none;
+const EmojiBox = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-top: 3rem;
+`;
+
+const CardWrapper = styled.div`
+  width: 150px;
+  height: 150px;
+  perspective: 1100px;
+
+  cursor: pointer;
+
+  &:hover div {
+    transform: rotateY(180deg);
+    transform: scale(1.1);
   }
+`;
+
+const Card = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: 0.4s;
+  transform-style: preserve-3d;
+`;
+
+const Front = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+`;
+
+const Back = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
 `;
 
 const Emoji = styled.img`
-  z-index: 1;
-  position: absolute;
-  max-width: 20vw;
-  max-height: auto;
-`;
+  width: 100%;
+  height: auto;
 
-const FirstEmoji = styled(Emoji)`
-  top: 10%;
-  left: 10%;
-`;
-
-const SecondEmoji = styled(Emoji)`
-  bottom: 10%;
-  left: 15%;
-`;
-
-const ThirdEmoji = styled(Emoji)`
-  top: 15%;
-  right: 5%;
-`;
-
-const FourthEmoji = styled(Emoji)`
-  bottom: 15%;
-  right: 15%;
+  transition: transform 0.3s ease;
 `;
 
 export default {
   Root,
-  Body,
   Background,
+  BackgroundBlur,
   Title,
   Cta,
-  FirstEmoji,
-  SecondEmoji,
-  ThirdEmoji,
-  FourthEmoji,
+  Emoji,
+  EmojiBox,
+  Card,
+  CardWrapper,
+  Front,
+  Back,
 };
