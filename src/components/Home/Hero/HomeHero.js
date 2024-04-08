@@ -1,4 +1,5 @@
 import s from './HomeHero.styles';
+import { Link } from 'react-router-dom';
 
 const emojiList = [
   '/profile-image/신재형-profile',
@@ -14,7 +15,9 @@ export const HomeHero = () => (
         GoWebEZ is
         <br /> Crazy Bastart Team
       </s.Title>
-      <s.Cta type="button">Learn more</s.Cta>
+      <Link to="/member">
+        <s.Cta type="button">Learn more</s.Cta>
+      </Link>
 
       <s.EmojiBox>
         {emojiList.map((emoji, idx) => (
