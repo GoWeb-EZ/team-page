@@ -6,28 +6,34 @@ const Root = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 5%;
+  padding: 0 40px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: transparent;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 60px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
 
   z-index: 100;
 `;
 
 const Logo = styled.h1`
-  font-size: 28px;
-  color: #e0e0e0;
+  color: var(--Primary, #252543);
+  text-align: center;
+  font-family: 'Pretendard';
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0;
 `;
 
 const NavList = styled.ul`
   display: flex;
   align-items: center;
   gap: 16px;
+  margin: 0;
 `;
 
 const Nav = styled(NavLink)`
@@ -36,8 +42,13 @@ const Nav = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e0e0e0;
-  font-weight: 500;
+
+  color: var(--Primary, #252543);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
 
   &.active {
     font-weight: 700;

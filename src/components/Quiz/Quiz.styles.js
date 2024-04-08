@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  padding: 0 4rem 4rem;
+  width: 100%;
+  padding-bottom: 4rem;
 
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 10%;
+  gap: 5%;
 
   > div {
     display: flex;

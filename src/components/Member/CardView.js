@@ -14,25 +14,27 @@ const fadeIn = keyframes`
   }
 `;
 
-
 const StyledCardView = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px 25px;
+  padding: 1rem 1.5rem;
   gap: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0.1, 0.1, 0.1, 0.1);
-  transition: background-color 0.3s, border-color 0.3s;
-  &:hover {
-    border-color: #0056b3;
-  }
-  animation: ${fadeIn} 0.5s ease-in-out;
-  animation-delay: ${props => props.delay}s;
 
+  border-radius: 1.875rem;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  animation: ${fadeIn} 0.5s ease-in-out;
+  animation-delay: ${(props) => props.delay}s;
 `;
 
-export default function CardView({memberData}) {
+export default function CardView({ memberData }) {
   return (
     <StyledCardView delay={memberData.id * 0.1}>
       <ProfileImage profileImageURL={memberData.profileImageURL} />

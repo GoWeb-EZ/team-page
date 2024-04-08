@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import s from './Guestbook.styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Form, Button, Row, Col, Card } from 'react-bootstrap';
+import { Form, Row, Col, Card } from 'react-bootstrap';
+import { Container } from '../../components/Container/Container';
 
 export default function GuestBook() {
   const [guests, setGuests] = useState([]);
@@ -20,9 +22,10 @@ export default function GuestBook() {
     localStorage.setItem('guests', JSON.stringify(guests));
   }, [guests]);
 
-  const backgroundColors = ['#FFADAD', '#FFD6A5', '#FDFFB6', '#CAFFBF', '#9BF6FF', '#A0C4FF', '#BDB2FF', '#FFC6FF'];
+  const backgroundColors = ['#EEA6AE', '#FEE98B', '#ACE5F1', '#A9E1E4', '#ECC0F0', '#BCE8CE'];
 
-  const getRandomBackgroundColor = () => backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+  const getRandomBackgroundColor = () =>
+    backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,17 +36,18 @@ export default function GuestBook() {
       message,
       backgroundColor: getRandomBackgroundColor(), // 항목 추가 시 색상 할당
     };
-    setGuests(prevGuests => [...prevGuests, newGuest]);
+    setGuests((prevGuests) => [...prevGuests, newGuest]);
     setName('');
     setMessage('');
   };
 
-
   return (
-    <Container style={{ marginTop: '100px' }}>
-      <h2>Guest-book</h2>
-      <p>우리 팀을 위한 응원 메시지를 남겨주세요!</p>
-      <Card style={{ borderRadius: '50px', border: '1px solid black' }}>
+    <Container style={{ justifyContent: 'flex-start' }}>
+      <s.Title>Guest-book</s.Title>
+      <s.Description>우리 팀을 위한 응원 메시지를 남겨주세요!</s.Description>
+
+      {/* Input */}
+      <s.StyledInputCard>
         <Card.Body style={{ padding: '10px' }}>
           <Form onSubmit={handleSubmit} style={{ border: 'none', padding: 0, background: 'none' }}>
             <Row className="align-items-start">
@@ -66,44 +70,32 @@ export default function GuestBook() {
                     placeholder="응원 메시지를 입력해주세요!"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    style={{ border: 'none', boxShadow: 'none', background: 'none', height: 'auto' }}
+                    style={{
+                      border: 'none',
+                      boxShadow: 'none',
+                      background: 'none',
+                      height: 'auto',
+                    }}
                   />
                 </Form.Group>
               </Col>
               <Col md={2} className="d-flex justify-content-end">
-                <Button variant="primary" type="submit" style={{ borderRadius: '20px', boxShadow: 'none', paddingRight: '40px', paddingLeft: '40px' }}>
-                  추가
-                </Button>
+                <s.StyledButton type="submit">추가</s.StyledButton>
               </Col>
             </Row>
           </Form>
         </Card.Body>
-      </Card>
-      <Row xs={1} md={4} className="g-4 mt-3">
+      </s.StyledInputCard>
+
+      {/* Card */}
+      <s.CardWrapper>
         {guests.map((guest) => (
-          <Col key={guest.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Card style={{
-              width: '300px',
-              height: '300px',
-              borderRadius: '15px',
-              border: '0px',
-              marginBottom: '40px',
-              background: guest.backgroundColor,
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-              overflow: 'auto',
-            }}>
-              <Card.Body style={{ padding: '10px', display: 'flex', flexDirection: 'column' }}>
-                <Card.Title style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                  {guest.name}
-                </Card.Title>
-                <Card.Text style={{ overflow: 'hidden', maxHeight: '250px' }}>
-                  {guest.message}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+          <s.StyledCard key={guest.id} style={{ background: guest.backgroundColor }}>
+            <s.StyledCardTitle>{guest.name}</s.StyledCardTitle>
+            <s.StyledCardText>{guest.message}</s.StyledCardText>
+          </s.StyledCard>
         ))}
-      </Row>
+      </s.CardWrapper>
     </Container>
   );
 }
