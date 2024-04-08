@@ -4,16 +4,19 @@ const StyledBrief = styled.div`
   display: flex;
   min-height: 120px;
   max-width: 240px;
-`
+`;
 
 const BriefText = styled.p`
-  overflow-wrap: break-word
-`
+  color: var(--Primary, #252543);
+  font-family: 'Pretendard';
+  font-size: 16px;
+  font-weight: 500;
+`;
 
-export default function Brief ({contents}) {
+export default function Brief({ contents }) {
   return (
     <StyledBrief>
       <BriefText>{contents}</BriefText>
     </StyledBrief>
-  )
+  );
 }

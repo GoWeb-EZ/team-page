@@ -7,21 +7,24 @@ const StyledNameField = styled.div`
 `;
 
 const StyledNameText = styled.span`
-  font-size: 1rem;
-  font-weight: 600;
-`
+  color: var(--Primary, #252543);
+  font-family: 'Pretendard';
+  font-size: 22px;
+  font-weight: 700;
+`;
 
 const StyledRoleText = styled.span`
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: gray;
-`
+  color: var(--Gray, #595959);
+  font-family: 'Pretendard';
+  font-size: 18px;
+  font-weight: 300;
+`;
 
-export default function NameField ({name, role}) {
-  return(
+export default function NameField({ name, role }) {
+  return (
     <StyledNameField>
       <StyledNameText>{name}</StyledNameText>
       <StyledRoleText>{role}</StyledRoleText>
     </StyledNameField>
-  )
+  );
 }
