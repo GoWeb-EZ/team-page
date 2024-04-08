@@ -23,9 +23,10 @@ const Background = styled.img`
 `;
 
 const BackgroundBlur = styled.div`
-  position: absolute;
+  // position: absolute;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
 
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
@@ -33,9 +34,8 @@ const BackgroundBlur = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
-  padding-top: 60px;
+  padding: 60px 3rem 0;
 `;
 
 export default {
