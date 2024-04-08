@@ -18,7 +18,7 @@ const quizData = {
     name: '신동원',
     brief: '항상 최선을 다하려는 개발자입니다.',
     github: 'https://github.com/edv-Shin',
-    answerList: ['ESTJ', '백엔드 🌿', '산책 🚶'],
+    answerList: ['ISTP', '백엔드 🌿', '게임 👾'],
   },
   정세호: {
     profileImageURL: '정세호-profile-image.svg',
@@ -30,9 +30,9 @@ const quizData = {
 };
 
 const quizList = [
-  { question: 'MBTI', answers: ['ESFJ', 'ENTJ', 'ISFP', 'ISTJ'] },
+  { question: 'MBTI', answers: ['ESFJ', 'ENTJ', 'ISFP', 'ISTP'] },
   { question: '담당 역할', answers: ['프론트엔드 🌐', '백엔드 🌿'] },
-  { question: '취미', answers: ['수영 🏊‍♂️', '산책 🚶', '음주 🍻', '영화 감상 🍿'] },
+  { question: '취미', answers: ['게임 👾', '산책 🚶', '음주 🍻', '영화 감상 🍿'] },
 ];
 
 export { quizData, quizList };
